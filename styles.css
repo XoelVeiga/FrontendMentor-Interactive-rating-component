@@ -35,13 +35,6 @@ button {
     padding: 25px;
 }
 
-.card-back {
-    background-color: #1E252F;
-    border-radius: 15px;
-    max-width: 20rem;
-    padding: 25px;
-}
-
 .card:hover {
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -55,8 +48,7 @@ button {
     padding: 15px;
     border-radius: 100%;
     background-color: hsl(213, 19%, 18%);
-    align-items: center;
-    justify-content: center;
+
 }
 
 .btngrp {
@@ -106,8 +98,29 @@ button {
     color: hsl(25, 97%, 53%);
 }
 
-.phone {
-    align-items: center;
+.card-flip {
+    background-color: #1E252F;
+    border-radius: 15px;
+    max-width: 20rem;
+    padding: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Overpass';
+}
+
+.label {
+    background-color: hsl(213, 19%, 18%);
+    color: hsl(25, 97%, 53%);
+    padding: 5px 20px 5px 20px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    font-family: 'Overpass';
 }
 
 #flip-card {
