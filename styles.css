@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: hsl(216, 12%, 8%);
+    background-color: #141519;
     display: grid;
     min-height: 100vh;
     display: flex;
@@ -24,8 +24,19 @@ p {
     color: hsl(217, 12%, 63%);
 }
 
+button {
+    cursor: pointer;
+}
+
 .card {
-    background-color: hsl(213, 19%, 18%);
+    background-color: #1E252F;
+    border-radius: 15px;
+    max-width: 20rem;
+    padding: 25px;
+}
+
+.card-back {
+    background-color: #1E252F;
     border-radius: 15px;
     max-width: 20rem;
     padding: 25px;
@@ -41,14 +52,37 @@ p {
 }
 
 .star {
+    padding: 15px;
+    border-radius: 100%;
+    background-color: hsl(213, 19%, 18%);
+    align-items: center;
+    justify-content: center;
+}
+
+.btngrp {
     font-family: 'Overpass';
     font-size: 15px;
     padding: 15px;
     border-radius: 100%;
-    background-color: hsl(216, 12%, 54%);
+    background-color: hsl(213, 19%, 18%);
     color: hsl(217, 12%, 63%);
     align-items: center;
     justify-content: center;
+    margin: 7px;
+}
+
+.btngrp button {
+    margin: 10px;
+}
+
+.btngrp:hover {
+    background-color: hsl(25, 97%, 53%);
+    color: white;
+}
+
+.btngrp:focus {
+    background-color: hsl(216, 12%, 54%);
+    color: white;
 }
 
 .inline {
@@ -65,4 +99,24 @@ p {
     border-radius: 20px;
     padding: 10px;
     width: fit-content;
+}
+
+.submit:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(25, 97%, 53%);
+}
+
+.phone {
+    align-items: center;
+}
+
+#flip-card {
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    -o-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
