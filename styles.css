@@ -1,3 +1,21 @@
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
 @font-face {
     font-family: 'Overpass';
     src: url(/fonts/Overpass-Italic-VariableFont_wght.ttf);
@@ -6,10 +24,10 @@
 body {
     background-color: #141519;
     display: grid;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     height: 100%;
+    width: 100%;
     align-items: center;
 }
 
@@ -26,20 +44,6 @@ p {
 
 button {
     cursor: pointer;
-}
-
-.card {
-    background-color: #1E252F;
-    border-radius: 15px;
-    max-width: 20rem;
-    padding: 25px;
-}
-
-.card:hover {
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.card button {
     border: none;
     width: 100%;
 }
@@ -48,66 +52,19 @@ button {
     padding: 15px;
     border-radius: 100%;
     background-color: hsl(213, 19%, 18%);
-
 }
 
-.btngrp {
-    font-family: 'Overpass';
-    font-size: 15px;
-    padding: 15px;
-    border-radius: 100%;
-    background-color: hsl(213, 19%, 18%);
-    color: hsl(217, 12%, 63%);
-    align-items: center;
-    justify-content: center;
-    margin: 7px;
-}
-
-.btngrp button {
-    margin: 10px;
-}
-
-.btngrp:hover {
-    background-color: hsl(25, 97%, 53%);
-    color: white;
-}
-
-.btngrp:focus {
-    background-color: hsl(216, 12%, 54%);
-    color: white;
-}
-
-.inline {
-    display: inline-flex;
-    align-items: center;
+.flip-card-3D-wrapper {
     width: 100%;
-}
-
-.submit {
-    margin-top: 20px;
-    font-family: 'Overpass';
-    background-color: hsl(25, 97%, 53%);
-    color: hsl(0, 0%, 100%);
-    border-radius: 20px;
-    padding: 10px;
-    width: fit-content;
-}
-
-.submit:hover {
-    background-color: hsl(0, 0%, 100%);
-    color: hsl(25, 97%, 53%);
-}
-
-.card-flip {
-    background-color: #1E252F;
-    border-radius: 15px;
-    max-width: 20rem;
-    padding: 25px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-family: 'Overpass';
+    height: 100%;
+    max-height: 23rem;
+    max-width: 23rem;
+    position: relative;
+    -o-perspective: 900px;
+    -webkit-perspective: 900px;
+    -ms-perspective: 900px;
+    perspective: 900px;
+    margin: 0 auto;
 }
 
 .label {
@@ -124,6 +81,12 @@ button {
 }
 
 #flip-card {
+    font-family: 'Overpass';
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    margin: 50px auto;
+    position: absolute;
     -o-transition: all 1s ease-in-out;
     -webkit-transition: all 1s ease-in-out;
     -ms-transition: all 1s ease-in-out;
@@ -132,4 +95,88 @@ button {
     -webkit-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    display: block;
+}
+
+.btngrp {
+    font-family: 'Overpass';
+    font-size: 15px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 100%;
+    background-color: hsl(213, 19%, 18%);
+    color: hsl(217, 12%, 63%);
+    align-items: center;
+    justify-content: center;
+    margin: 7px;
+}
+
+.btngrp:hover {
+    background-color: hsl(25, 97%, 53%);
+    color: white;
+}
+
+.btngrp:focus {
+    background-color: hsl(216, 12%, 54%);
+    color: white;
+}
+
+.inline {
+    display: inline-flex;
+    align-items: center;
+}
+
+.do-flip {
+    -o-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.submit {
+    margin-top: 20px;
+    font-family: 'Overpass';
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.submit:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(25, 97%, 53%);
+}
+
+
+#flip-card .flip-card-front,
+#flip-card .flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+
+#flip-card .flip-card-front {
+    background-color: #1E252F;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+#flip-card .flip-card-back {
+    background-color: #1E252F;
+    border-radius: 15px;
+    padding: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Overpass';
+    -o-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
