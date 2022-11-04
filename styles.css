@@ -26,6 +26,7 @@ body {
     display: grid;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
     height: 100%;
     width: 100%;
     align-items: center;
@@ -101,13 +102,14 @@ button {
 .btngrp {
     font-family: 'Overpass';
     font-size: 15px;
-    padding: 15px 20px 15px 20px;
     border-radius: 100%;
     background-color: hsl(213, 19%, 18%);
     color: hsl(217, 12%, 63%);
     align-items: center;
     justify-content: center;
-    margin: 7px;
+    width: 3rem;
+    height: 3rem;
+    margin: 6px;
 }
 
 .btngrp:hover {
@@ -179,4 +181,25 @@ button {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     transform: rotateY(180deg);
+}
+
+@media screen and (max-width:375px) {
+    .inline {
+        display: block;
+    }
+
+    .flip-card-front {
+        min-height: 27rem;
+    }
+
+    .flip-card-back {
+        min-height: 26rem;
+    }
+}
+
+@media screen and (max-width:252px) {
+
+    .flip-card-front {
+        min-height: 35rem;
+    }
 }
