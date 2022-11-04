@@ -15,33 +15,38 @@
 </head>
 
 <body>
-  <main id="flip-card">
-    <div class="card">
-      <img class="star" src="images/icon-star.svg" alt="star">
-      <h1>How did we do?</h1>
-      <p>
-        Please let us know how we did with your support request.
-        All feedback is appreciated to help us improve our offering!
-      </p>
-      <div class="inline">
-        <button class="btngrp" type="radio" value="1">1</button>
-        <button class="btngrp" type="radio" value="2">2</button>
-        <button class="btngrp" type="radio" value="3">3</button>
-        <button class="btngrp" type="radio" value="4">4</button>
-        <button class="btngrp" type="radio" value="5">5</button>
+  <script type="text/javascript" src="utils.js"></script>
+  <div class="flip-card-3D-wrapper">
+    <div id="flip-card">
+      <div class="flip-card-front">
+        <img class="star" src="images/icon-star.svg" alt="star">
+        <h1>How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request.
+          All feedback is appreciated to help us improve our offering!
+        </p>
+        <div class="inline">
+          <button class="btngrp" type="radio" onclick="ratedValue(this)" value="1">1</button>
+          <button class="btngrp" type="radio" onclick="ratedValue(this)" value="2">2</button>
+          <button class="btngrp" type="radio" onclick="ratedValue(this)" value="3">3</button>
+          <button class="btngrp" type="radio" onclick="ratedValue(this)" value="4">4</button>
+          <button class="btngrp" type="radio" onclick="ratedValue(this)" value="5">5</button>
+        </div>
+        <button disabled type="submit" class="submit" id="submit">SUBMIT</button>
       </div>
-      <button type="submit" class="submit">SUBMIT</button>
+      <div class="flip-card-back">
+        <img class="phone" src="images/illustration-thank-you.svg" alt="img">
+        <p class="label">You selected <span id="val"></span> out of 5</p>
+        <h1>Thank you!</h1>
+        <p>We appreciate you taking the time to give a rating. </br> If you ever need more support, don't
+          hesitate to
+          <br>
+          get in touch!
+        </p>
+      </div>
     </div>
-
-    <div class="card-flip">
-      <img class="phone" src="images/illustration-thank-you.svg" alt="img">
-      <p class="label">You selected 4 out of 5</p>
-      <h1>Thank you!</h1>
-      <p>We appreciate you taking the time to give a rating. </br> If you ever need more support, don't hesitate to <br>
-        get in touch!</p>
-    </div>
-
-  </main>
+  </div>
 </body>
+
 
 </html>
